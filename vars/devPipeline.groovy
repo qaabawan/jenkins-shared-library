@@ -2,7 +2,7 @@ def call() {
 
     echo 'Running Dev Stage: Data Ingestion and Training...'
     sh '''
-        cd ~/mlops_assignment
+        cd /home/kaaba/mlops_assignment
         source venv/bin/activate
         python train.py
     '''
