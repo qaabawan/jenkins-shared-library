@@ -1,18 +1,10 @@
 def call() {
-    pipeline {
-        agent any
-        stages {
-            stage('Load Post-Test Model') {
-                steps {
-                    echo 'Loading model with Challenger-post-test alias...'
-                }
-            }
-            stage('Promote to Champion') {
-                steps {
-                    echo 'Assigning official alias: CHAMPION!'
-                    echo 'Model successfully live in Production (MLflow).'
-                }
-            }
-        }
-    }
+    
+    echo 'Running Dev Stage: Data Ingestion and Training...' [cite: 12, 13]
+    sh '''
+        cd ~/mlops_assignment
+        source venv/bin/activate
+        python train.py
+    '''
+    echo 'Model evaluation completed successfully. Assigned alias: Challenger.' [cite: 16, 20]
 }
